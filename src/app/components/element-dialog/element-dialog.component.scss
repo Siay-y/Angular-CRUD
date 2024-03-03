@@ -1,0 +1,47 @@
+:host {
+  .main-form {
+    padding: 20px;
+
+    background: var(--grey);
+    border-bottom: 3px solid var(--primary);
+
+    h1 {
+      font-weight: bold;
+    }
+
+    .number-input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+    }
+
+    .btns {
+      display: flex;
+      justify-content: space-between;
+
+      .btn {
+        padding: 5px 15px;
+        background: transparent;
+      }
+
+      .btn-cancel {
+        font-weight: 500;
+        color: var(--black-10);
+        border: 2px solid var(--black-10);
+
+        &:hover {
+          background: var(--grey);
+        }
+      }
+
+      .btn-add,
+      .btn-edit{
+        color: var(--white);
+        background: var(--green);
+        transition: .1s;
+
+        &:hover{
+          background: var(--green-10);
+        }
+      }
+    }
+  }
+}

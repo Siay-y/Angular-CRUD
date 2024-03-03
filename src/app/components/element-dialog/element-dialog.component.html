@@ -1,0 +1,48 @@
+<div class="main-form">
+  @if (!isChange) {
+  <h1 mat-dialog-title>Adicionar Veículo</h1>
+  } @if (isChange) {
+  <h1 mat-dialog-title>Editar Veículo</h1>
+  }
+
+  <div mat-dialog-content #container>
+    <mat-form-field appearance="fill">
+      <mat-label>Id</mat-label>
+      <input matInput [(ngModel)]="data.id" [readonly]="isChange" type="number" class="number-input" required/>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Placa</mat-label>
+      <input matInput [(ngModel)]="data.placa" maxlength="10" required/>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Chassi</mat-label>
+      <input matInput [(ngModel)]="data.chassi" maxlength="20" required/>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Renavan</mat-label>
+      <input matInput [(ngModel)]="data.renavan" maxlength="10" required/>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Modelo</mat-label>
+      <input matInput [(ngModel)]="data.modelo" maxlength="15" required/>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Marca</mat-label>
+      <input matInput [(ngModel)]="data.marca" maxlength="15" required/>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Ano</mat-label>
+      <input matInput [(ngModel)]="data.ano" type="number" class="number-input" required/>
+    </mat-form-field>
+  </div>
+  <div mat-dialog-actions class="btns">
+    @if (!isChange) {
+      <button mat-button [mat-dialog-close]="data" cdkFocusInitial class="btn btn-add" [disabled]="isFormValid()">
+        Adicionar
+      </button>
+    } @if (isChange) {
+      <button mat-button [mat-dialog-close]="data" cdkFocusInitial class="btn btn-edit" [disabled]="isFormValid()">Editar</button>
+    }
+    <button mat-button (click)="onCancel()" class="btn btn-cancel">Cancelar</button>
+  </div>
+</div>

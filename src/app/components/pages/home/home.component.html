@@ -1,0 +1,17 @@
+<app-header></app-header>
+
+<div class="mid">
+  @defer (on viewport) {
+    <app-info-card />
+  }@placeholder {
+    <section>
+      <h2>Carregando todos os dados da lista...</h2>
+      <div id="loader"></div>
+    </section>
+  }@error {
+    <section>
+      <h2>Ocorreu um erro no download do componente, tente novamente...</h2>
+    </section>
+  }
+</div>
+<app-footer />
